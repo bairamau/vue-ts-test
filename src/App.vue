@@ -1,11 +1,11 @@
 <template>
-  <div id="app" :class="$style.module">
-    <div id="nav" :class="$style.nav" v-if="$route.name !== 'home'">
-      <router-link :to="{ name: 'home' }">Home</router-link>
+  <div id="app" :class="$style.app">
+    <div :class="$style.nav" v-if="$route.name !== 'home'">
+      <router-link :class="$style.link" :to="{ name: 'home' }">Home</router-link>
     </div>
-    <div id="nav" v-else>
-      <router-link :to="{ name: 'table' }">Table</router-link>
-      <router-link :to="{ name: 'canvas' }">Canvas</router-link>
+    <div id="nav" :class="$style.nav" v-else>
+      <router-link :class="$style.link" :to="{ name: 'table' }">Table</router-link>
+      <router-link :class="$style.link" :to="{ name: 'canvas' }">Canvas</router-link>
     </div>
     <router-view />
   </div>
@@ -50,7 +50,7 @@ export default class App extends Vue {
 .nav {
   padding-bottom: 20px;
 
-  a {
+  .link {
     font-weight: bold;
     color: #2c3e50;
     margin-right: 20px;
