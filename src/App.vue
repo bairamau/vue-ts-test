@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <div id="nav" v-if="$route.name !== 'home'">
+  <div id="app" :class="$style.module">
+    <div id="nav" :class="$style.nav" v-if="$route.name !== 'home'">
       <router-link :to="{ name: 'home' }">Home</router-link>
     </div>
     <div id="nav" v-else>
@@ -26,28 +26,34 @@ export default class App extends Vue {
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, Helvetica,
-    Arial, sans-serif;
+<style lang="scss" module>
+.app {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif,
+    Helvetica,
+    Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   padding: 30px;
 }
 
-#nav {
+.nav {
   padding-bottom: 20px;
 
   a {
     font-weight: bold;
     color: #2c3e50;
     margin-right: 20px;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
   }
 }
 </style>

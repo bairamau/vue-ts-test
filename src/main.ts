@@ -1,4 +1,5 @@
 import Vue from "vue";
+import VueI18n from "vue-i18n";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
@@ -11,9 +12,27 @@ import "vue-class-component/hooks";
 Vue.config.productionTip = false;
 
 Vue.use(ElementUI);
+Vue.use(VueI18n);
+
+const messages = {
+  en: {
+    keys: "Keys",
+    fruits: "Fruits"
+  },
+  ru: {
+    keys: "Ключи",
+    fruits: "Фрукты"
+  }
+};
+
+const i18n = new VueI18n({
+  locale: "ru",
+  messages
+});
 
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
+  i18n
 }).$mount("#app");

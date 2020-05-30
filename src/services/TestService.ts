@@ -1,4 +1,5 @@
 import axios from "axios";
+import * as Bluebird from "bluebird";
 
 const apiClient = axios.create({
   baseURL: "http://fantogramma.org"
@@ -20,7 +21,7 @@ const getImage = async (): Promise<HTMLImageElement> => {
   const file = new File([data], "bg");
   const image = new Image();
 
-  return new Promise(resolve => {
+  return new Bluebird.Promise(resolve => {
     const loadHandler = () => {
       image.removeEventListener("load", loadHandler);
       resolve(image);

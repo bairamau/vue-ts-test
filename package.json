@@ -6,13 +6,20 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "proj:check": "yarn stylelint \"**/*.vue\" && yarn eslint . --ext .js,.ts,.vue",
+    "proj:start": "vue-cli-service serve"
   },
   "dependencies": {
     "axios": "^0.19",
+    "bluebird": "^3.7",
     "core-js": "^3.6.5",
     "element-ui": "^2.13",
+    "fp-ts": "^2.6.2",
+    "io-ts": "^2.2",
     "reflect-metadata": "^0.1.13",
+    "stylelint": "^13.5.0",
+    "stylelint-config-standard": "^20.0.0",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-i18n": "^8.17",
@@ -22,6 +29,7 @@
     "vuex-simple": "^2.2"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.32",
     "@types/jest": "^24.0.19",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",

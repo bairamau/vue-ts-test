@@ -1,34 +1,43 @@
 <template>
-  <el-table :class="$style.table" :row-key="'row'" :data="tableData">
-    <el-table-column :column-key="'col-1'" prop="key">
-      <template #header>
-        <div
-          @click="handleClick('key')"
-          :class="{
-            [$style.header]: true,
-            [$style.ascending]: sortedAscending && sortedColumn === 'key',
-            [$style.descending]: !sortedAscending && sortedColumn === 'key'
-          }"
-        >
-          Keys
-        </div>
-      </template>
-    </el-table-column>
-    <el-table-column :column-key="'col-2'" prop="fruit">
-      <template #header>
-        <div
-          @click="handleClick('fruit')"
-          :class="{
-            [$style.header]: true,
-            [$style.ascending]: sortedAscending && sortedColumn === 'fruit',
-            [$style.descending]: !sortedAscending && sortedColumn === 'fruit'
-          }"
-        >
-          Fruits
-        </div>
-      </template>
-    </el-table-column>
-  </el-table>
+  <div :class="$style.container">
+    <el-table :row-key="'row'" :data="tableData">
+      <el-table-column :column-key="'col-1'" prop="key">
+        <template #header>
+          <div
+            @click="handleClick('key')"
+            :class="{
+              [$style.header]: true,
+              [$style.ascending]: sortedAscending && sortedColumn === 'key',
+              [$style.descending]: !sortedAscending && sortedColumn === 'key'
+            }"
+          >
+            {{ $t("keys") }}
+          </div>
+        </template>
+      </el-table-column>
+      <el-table-column :column-key="'col-2'" prop="fruit">
+        <template #header>
+          <div
+            @click="handleClick('fruit')"
+            :class="{
+              [$style.header]: true,
+              [$style.ascending]: sortedAscending && sortedColumn === 'fruit',
+              [$style.descending]: !sortedAscending && sortedColumn === 'fruit'
+            }"
+          >
+            {{ $t("fruits") }}
+          </div>
+        </template>
+      </el-table-column>
+    </el-table>
+    <el-button
+      @click="
+        $i18n.locale === 'en' ? ($i18n.locale = 'ru') : ($i18n.locale = 'en')
+      "
+      type="primary"
+      >{{ $i18n.locale.toUpperCase() }}</el-button
+    >
+  </div>
 </template>
 
 <script lang="ts">
@@ -82,6 +91,14 @@ export default class FruitsTable extends Vue {
 </script>
 
 <style lang="scss" module>
+.container {
+  display: grid;
+  grid-template-columns: 370px auto;
+  grid-gap: 30px;
+  align-items: start;
+  justify-content: start;
+}
+
 .header {
   cursor: pointer;
 
@@ -92,9 +109,5 @@ export default class FruitsTable extends Vue {
   &.descending {
     color: #409eff;
   }
-}
-
-.table {
-  max-width: 370px;
 }
 </style>
