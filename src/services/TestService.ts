@@ -14,8 +14,21 @@ const getFruits = async (): Promise<TFruits> => {
   return (await apiClient.get("/test.json")).data;
 };
 
-const getImage = async (): Promise<File> => {
-  return (await apiClient.get("/test.png")).data;
+const getImage = async (): Promise<HTMLImageElement> => {
+  const data = (await apiClient.get("/test.png", { responseType: "blob" }))
+    .data;
+  const file = new File([data], "bg");
+  const image = new Image();
+
+  return new Promise(resolve => {
+    const loadHandler = () => {
+      image.removeEventListener("load", loadHandler);
+      resolve(image);
+    };
+
+    image.addEventListener("load", loadHandler);
+    image.src = URL.createObjectURL(file);
+  });
 };
 
 export default {

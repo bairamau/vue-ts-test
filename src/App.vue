@@ -11,6 +11,21 @@
   </div>
 </template>
 
+<script lang="ts">
+import { Vue, Component } from "vue-property-decorator";
+import { useStore } from "vuex-simple";
+import { Store } from "@/store/store";
+
+@Component
+export default class App extends Vue {
+  public store: Store = useStore(this.$store);
+  public created() {
+    this.store.fruits.requestFruits();
+    this.store.canvas.requestImage();
+  }
+}
+</script>
+
 <style lang="scss">
 #app {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -23,6 +38,8 @@
 }
 
 #nav {
+  padding-bottom: 20px;
+
   a {
     font-weight: bold;
     color: #2c3e50;
