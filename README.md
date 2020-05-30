@@ -1,4 +1,12 @@
 # vue-ts-test
+## Затраченное время
+* Оснвоное задание: 14 часов
+* vuex: 2 часа
+* vue-i18n: 20 минут
+* unit testing: -
+* io-ts: -
+* eslint + stylelint: 20 минут
+* bluebird: 20 минут (не смог заменить глобально, только единственный вызов new Promise)
 
 ## Project setup
 ```
@@ -7,12 +15,7 @@ yarn install
 
 ### Compiles and hot-reloads for development
 ```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
+yarn proj:start
 ```
 
 ### Run your unit tests
@@ -20,10 +23,12 @@ yarn build
 yarn test:unit
 ```
 
-### Lints and fixes files
+### Run ESlint and Stylelint
 ```
-yarn lint
+yarn proj:check
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Compiles and minifies for production
+```
+yarn build
+```
