@@ -7,7 +7,11 @@
 * io-ts: -
 * eslint + stylelint: 20 минут
 * bluebird: 20 минут (не смог заменить глобально, только единственный вызов new Promise)
-
+## Примечания
+* Тайпскрипт жалуется на тайпинги в библиотеке element-ui
+```
+node_modules/element-ui/types/table.d.ts(43,3):
+```
 ## Project setup
 ```
 yarn install
@@ -16,11 +20,6 @@ yarn install
 ### Compiles and hot-reloads for development
 ```
 yarn proj:start
-```
-
-### Run your unit tests
-```
-yarn test:unit
 ```
 
 ### Run ESlint and Stylelint
