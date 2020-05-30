@@ -22,11 +22,6 @@ yarn install
 yarn proj:start
 ```
 
-### Run your unit tests
-```
-yarn test:unit
-```
-
 ### Run ESlint and Stylelint
 ```
 yarn proj:check
