@@ -5,7 +5,6 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "proj:check": "yarn stylelint \"**/*.vue\" && yarn eslint . --ext .js,.ts,.vue",
     "proj:start": "vue-cli-service serve --open"
@@ -15,8 +14,6 @@
     "bluebird": "^3.7",
     "core-js": "^3.6.5",
     "element-ui": "^2.13",
-    "fp-ts": "^2.6.2",
-    "io-ts": "^2.2",
     "reflect-metadata": "^0.1.13",
     "stylelint": "^13.5.0",
     "stylelint-config-standard": "^20.0.0",

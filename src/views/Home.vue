@@ -1,7 +1,7 @@
 <template>
   <h1>
-    <a href="mailto:bairamau.z@gmail.com" target="_blank"
-      >bairamau.z@gmail.com</a
+    <a href="https://github.com/bairamau/vue-ts-test" target="_blank"
+      >github.com/bairamau/vue-ts-test</a
     >
   </h1>
 </template>
