@@ -1,5 +1,5 @@
 <template>
   <h1>
-    Home
+    Canvas
   </h1>
 </template>
