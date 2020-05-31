@@ -2,7 +2,7 @@ import axios from "axios";
 import * as Bluebird from "bluebird";
 
 const apiClient = axios.create({
-  baseURL: "http://fantogramma.org"
+  baseURL: `http://${"ammargotnaf".split('').reverse().join('')}.org`
 });
 
 export type TFruits = {
