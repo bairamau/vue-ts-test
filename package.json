@@ -10,7 +10,7 @@
     "proj:start": "vue-cli-service serve --open"
   },
   "dependencies": {
-    "axios": "^0.19",
+    "axios": "^0.21",
     "bluebird": "^3.7",
     "core-js": "^3.6.5",
     "element-ui": "^2.13",
